@@ -1,0 +1,18 @@
+{% extends  "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+    <body>
+        <h2>Welcome to the home page.</h2>
+        <ul>
+            {% for item in items %}
+            <li>This is {{item.title}} , {{item.description}}, cost £{{item.cost}} with car {{item.car}} {{item.carType}} in {{item.postCode}} start from {{item.startDate}} end in {{item.completionDate}}.<a href="{{url_for('checkLesson', x=item.id)}}">Click to see details of of lessons</a></li>
+            {% endfor %}
+        </ul>
+        
+
+    </body>
+
+
+{% endblock %}

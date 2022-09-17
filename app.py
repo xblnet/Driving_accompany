@@ -86,8 +86,8 @@ def home():
     data = Lesson.query.all()
     return render_template('home.html',items = data)
 
-@app.route('/profile', methods=['GET','POST'])
-def profile():
+@app.route('/lesson', methods=['GET','POST'])
+def lesson():
     if request.method == 'POST':
         title = request.form.get('title')
         description = request.form.get('description')
@@ -102,7 +102,7 @@ def profile():
         db.session.add(new_lesson)
         db.session.commit()
         return redirect(url_for('home'))
-    return render_template('profile.html')
+    return render_template('lesson.html')
 
 @app.route('/checkLesson/<int:x>', methods=['GET','POST'])
 def checkLesson(x):
@@ -133,9 +133,7 @@ def checkLesson(x):
 
         db.session.commit()
         return redirect(url_for('home'))
-    return render_template('profile.html', data = data)
-
-
+    return render_template('lesson.html', data = data)
 
 @app.route('/register', methods=['GET','POST'])
 def register():
@@ -167,44 +165,6 @@ def register():
             return redirect(url_for('home'))
 
     return render_template("register.html", user = current_user)
-    
-
-# @application.route('/profile/<int:x>')
-# def profile(x):
-#     variable = Customer.query.get(x)
-#     data = Lesson.query.filter_by(publisher_id=x)
-#     return render_template('profile.html', items = data, varinfo = variable)
-    
-# @application.route('/publisher/printing/<int:x>')
-# def printing(x):
-#     variable = PrintJob.query.get(x)
-#     data = Orders.query.filter_by(printJob_id=x)
-#     return render_template('printing.html', items = data, varinfo = variable)
-
-# @application.route('/publisher/printing/orders/<int:x>')
-# def orders(x):
-#     variable = Orders.query.get(x)
-#     data = PrintItem.query.filter_by(orders_id=x)
-#     return render_template('orders.html', items = data, varinfo = variable)
-
-# @application.route('/publisher/printing/orders/item/<int:x>')
-# def item(x):
-#     variable = Orders.query.get(x)
-#     data = PrintItem.query.filter_by(orders_id=x)
-#     return render_template('item.html', items = data, varinfo = variable)
-
-# @application.route('/about')
-# def about():
-#     return render_template('about.html')
-
-
-# @application.route('/contact')
-# def contact():
-#     return render_template('contact.html')
-
-# @application.route('/project')
-# def project():
-#     return render_template('project.html')
 
 def covnertTime(x):
     y = datetime.strptime(x,'d/%m/%Y %H:%M:%S')
@@ -214,9 +174,6 @@ def covnertDate(x):
     y = datetime.strptime(x,'%Y-%m-%d')
     return y
 
-
-
 if __name__=='__main__':
-
     app.config['SECRET_KEY'] = 'kds0ndkdfik4ifkf4k9'
-    app.run(debug=True, host='localhost',port='5000')
+    app.run(debug=True, host='0.0.0.0',port='5000')

@@ -1,15 +1,23 @@
 pipeline{
         agent any
         stages{
-            stage('Make Directory'){
+            stage('Build for docker image'){
                 steps{
-                    sh "mkdir ~/jenkins-tutorial-test"
+                    sh "git pull"
+                    sh "docker build"
                 }
             }
-            stage('Make Files'){
+            stage('Test python flask APP'){
                 steps{
-                    sh "touch ~/jenkins-tutorial-test/file1 ~/jenkins-tutorial-test/file2"
+                    sh "cd /tests"
+                    sh "python3 -m pytest --cov"
                 }
             }
+            stage('Deployment image with APP'){
+                steps{
+                    sh "sudo docker-compose up -d --build"
+                }
+            }
+            
         }
 }

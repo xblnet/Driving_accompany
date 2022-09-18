@@ -1,21 +1,14 @@
 pipeline{
         agent any
         stages{
-            stage('Build for docker image'){
+            stage('locate file'){
                 steps{
-                    sh "git pull"
-                    sh "docker build"
+                    sh "cd /home/azureuser/Driving_accompany/driving_accompany"
                 }
             }
-            stage('Test python flask APP'){
+            stage('Run the test'){
                 steps{
-                    sh "cd /tests"
-                    sh "python3 -m pytest --cov"
-                }
-            }
-            stage('Deployment image with APP'){
-                steps{
-                    sh "sudo docker-compose up -d --build"
+                    sh "python3 -m pytest"
                 }
             }
             

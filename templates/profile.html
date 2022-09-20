@@ -1,0 +1,56 @@
+{% extends  "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+    <body>
+        <br />
+        <form method="post">
+            <h3 align="center" id ="page">Create you lesson</h3>
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="uname" name="title" placeholder="Enter title">   
+                <label for="description">Description</label>
+                <input type="textarea" class="form-control" id="description" name="description" placeholder="Enter description"> 
+                <label for="startDate">Start Date</label>
+                <input type="date" class="form-control" id="startDate" name="startDate" placeholder="Enter start date">     
+                <label for="endDate">Completion Date</label>
+                <input type="date" class="form-control" id="endDate" name="endDate" placeholder="Enter completion date">  
+                <label for="cost">Cost</label>
+                <input type="number" step="0.01" class="form-control" id="cost" name="cost" placeholder="Enter your cost">  
+                <label for="car">Car</label>
+                <input type="text" class="form-control" id="car" name="car" placeholder="Enter car you have"> <br>
+                <label for="carType">Car Type</label>
+                <select name="carType" id="carType">
+                    <option value="Manual">Manual</option>
+                    <option value="Automatic">Automatic</option>
+                  </select><br><br>
+
+                <label for="postCode">Post Code</label>
+                <input type="text" class="form-control" id="postCode" name="postCode" placeholder="Enter your post code">                 
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary" id="sbutton" name="submit_button" value="Do Nothing">Create</button>
+
+            {% if data %}
+                <script>page.innerText = "Check Lesson";</script>
+                <script>document.getElementById('uname').value = '{{data.description}}';</script>
+                <script>document.getElementById('description').value = '{{data.description}}';</script>
+                <script>document.getElementById('startDate').value = '{{data.startDate}}';</script>
+                <script>document.getElementById('endDate').value = '{{data.completionDate}}';</script>
+                <script>document.getElementById('cost').value = '{{data.cost}}';</script>
+                <script>document.getElementById('car').value = '{{data.car}}';</script>
+                <script>document.getElementById('carType').value = '{{data.carType}}';</script>
+                <script>document.getElementById('postCode').value = '{{data.postCode}}';</script>
+                <script>sbutton.innerText = 'Update';</script>
+
+                <button type="submit" class="btn btn-primary" name="submit_button" value="Do Something">Delete</button>
+
+            {% endif %}
+        </form>
+        
+
+    </body>
+
+
+{% endblock %}

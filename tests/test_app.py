@@ -1,7 +1,7 @@
 # Import the necessary modules
 from flask import url_for
 from flask_testing import TestCase
-from app import app, db, Lesson
+from app import app, db, Customer
 
 # Create the base class
 class TestBase(TestCase):
@@ -21,7 +21,7 @@ class TestBase(TestCase):
         # Create table
         db.create_all()
         # Create test registree
-        sample1 = Lesson(title="New lesson in Sutton")
+        sample1 = Customer(name="MsWoman")
         # save users to database
         db.session.add(sample1)
         db.session.commit()
@@ -37,4 +37,4 @@ class TestViews(TestBase):
     def test_home_get(self):
         response = self.client.get(url_for('home'))
         self.assertEqual(response.status_code, 200)
-        self.assertIn(b'New lesson in Sutton', response.data)
+        self.assertIn(b'MsWoman', response.data)

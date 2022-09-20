@@ -37,7 +37,6 @@ class Lesson(db.Model):
     instructorID = db.Column(db.Integer, db.ForeignKey('instructor.id'))
     review = db.relationship('Review', backref='one_Review')
     
-
 class Instructor(db.Model):
     __tablename__ = "instructor"
     id = db.Column(db.Integer, primary_key=True)
@@ -168,44 +167,6 @@ def register():
             return redirect(url_for('home'))
 
     return render_template("register.html", user = current_user)
-    
-
-# @application.route('/profile/<int:x>')
-# def profile(x):
-#     variable = Customer.query.get(x)
-#     data = Lesson.query.filter_by(publisher_id=x)
-#     return render_template('profile.html', items = data, varinfo = variable)
-    
-# @application.route('/publisher/printing/<int:x>')
-# def printing(x):
-#     variable = PrintJob.query.get(x)
-#     data = Orders.query.filter_by(printJob_id=x)
-#     return render_template('printing.html', items = data, varinfo = variable)
-
-# @application.route('/publisher/printing/orders/<int:x>')
-# def orders(x):
-#     variable = Orders.query.get(x)
-#     data = PrintItem.query.filter_by(orders_id=x)
-#     return render_template('orders.html', items = data, varinfo = variable)
-
-# @application.route('/publisher/printing/orders/item/<int:x>')
-# def item(x):
-#     variable = Orders.query.get(x)
-#     data = PrintItem.query.filter_by(orders_id=x)
-#     return render_template('item.html', items = data, varinfo = variable)
-
-# @application.route('/about')
-# def about():
-#     return render_template('about.html')
-
-
-# @application.route('/contact')
-# def contact():
-#     return render_template('contact.html')
-
-# @application.route('/project')
-# def project():
-#     return render_template('project.html')
 
 def covnertTime(x):
     y = datetime.strptime(x,'d/%m/%Y %H:%M:%S')

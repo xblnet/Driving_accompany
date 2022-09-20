@@ -9,7 +9,7 @@ services:
       - 5000
 
   nginx:
-    image:: xblcn/driving_accompany_nginx
+    image: xblcn/driving_accompany_nginx
     restart: always
     ports:
       - "80:80"

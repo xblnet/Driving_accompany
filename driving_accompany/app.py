@@ -86,7 +86,7 @@ def home():
     data = Lesson.query.all()
     return render_template('home.html',items = data)
 
-@app.route('/profile', methods=['GET','POST'])
+@app.route('/lesson', methods=['GET','POST'])
 def profile():
     if request.method == 'POST':
         title = request.form.get('title')
@@ -102,7 +102,7 @@ def profile():
         db.session.add(new_lesson)
         db.session.commit()
         return redirect(url_for('home'))
-    return render_template('profile.html')
+    return render_template('lesson.html')
 
 @app.route('/checkLesson/<int:x>', methods=['GET','POST'])
 def checkLesson(x):
@@ -133,7 +133,7 @@ def checkLesson(x):
 
         db.session.commit()
         return redirect(url_for('home'))
-    return render_template('profile.html', data = data)
+    return render_template('lesson.html', data = data)
 
 
 

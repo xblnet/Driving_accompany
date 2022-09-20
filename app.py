@@ -3,6 +3,7 @@ from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user, current_user
 from flask import Flask,render_template, request, flash, redirect, url_for
+import os
 
 today = datetime.now()
 app = Flask(__name__)
@@ -175,5 +176,7 @@ def covnertDate(x):
     return y
 
 if __name__=='__main__':
-    app.config['SECRET_KEY'] = 'kds0ndkdfik4ifkf4k9'
+    secret = os.urandom(24).hex()
+    print(secret)
+    app.config['SECRET_KEY'] = secret
     app.run(debug=True, host='0.0.0.0',port='5000')

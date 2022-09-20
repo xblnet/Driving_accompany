@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+
+  app:
+    build: ./driving_accompany
+    container_name: driving_accompany
+    restart: always
+    expose:
+      - 5000
+
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
+    

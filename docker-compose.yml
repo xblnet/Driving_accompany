@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+
+  app:
+    image: xblcn/driving_accompany_app
+    restart: always
+    expose:
+      - 5000
+
+  nginx:
+    image:: xblcn/driving_accompany_nginx
+    restart: always
+    ports:
+      - "80:80"
+    

@@ -6,8 +6,8 @@ services:
     image: driving_accompany
     build: ./driving_accompany
     restart: always
-    # expose:
-    #   - 8080
+    expose:
+      - 8080
 
   nginx:
     image: nginx

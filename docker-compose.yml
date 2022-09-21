@@ -4,7 +4,7 @@ services:
 
   app:
     image: driving_accompany
-    build: .../driving_accompany
+    build: ../driving_accompany
     restart: always
     expose:
       - 8080

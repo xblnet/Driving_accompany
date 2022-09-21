@@ -7,6 +7,8 @@ services:
     restart: always
     expose:
       - "5000"
+    environment:
+      port: 5000
     deploy:
       mode: replicated
       replicas: 3
@@ -14,6 +16,5 @@ services:
   nginx:
     image: xblcn/driving_accompany_nginx
     restart: always
-    deploy:
-      mode: replicated
-      replicas: 3
+    ports:
+      - "80:80"

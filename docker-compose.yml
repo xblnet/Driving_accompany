@@ -14,6 +14,5 @@ services:
     build: ./nginx
     restart: always
     ports:
-    - published: 80
-      target: 80
+      - "80:80"
     

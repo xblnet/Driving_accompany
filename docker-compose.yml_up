@@ -7,17 +7,13 @@ services:
     build:
       context: ./driving_accompany
       dockerfile: Dockerfile
-    container_name: driving_accompany
     restart: always
-    expose:
-      - "8080"
 
   nginx:
     image: nginx
     build: 
       context: ./nginx
       dockerfile: Dockerfile
-    container_name: nginx
     restart: always
     #ports:
       #- "80:80"

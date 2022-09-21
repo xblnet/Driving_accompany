@@ -3,15 +3,13 @@ version: "3.9"
 services:
 
   app:
-    build: ./driving_accompany
-    container_name: driving_accompany
+    image: xblcn/driving_accompany_app
     restart: always
     expose:
       - 5000
 
   nginx:
-    build: ./nginx
-    container_name: nginx
+    image: xblcn/driving_accompany_nginx
     restart: always
     ports:
       - "80:80"

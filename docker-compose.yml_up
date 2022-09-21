@@ -19,8 +19,8 @@ services:
       dockerfile: Dockerfile
     container_name: nginx
     restart: always
-    ports:
-      - "80:80"
+    #ports:
+      #- "80:80"
     deploy:
       mode: replicated
       replicas: 3

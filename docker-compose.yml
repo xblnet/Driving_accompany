@@ -5,14 +5,20 @@ services:
   app:
     image: driving_accompany
     build: ./driving_accompany
-    container_name: driving_accompany
     restart: always
+    expose:
+      - 8080
+    deploy:
+      mode: replicated
+      replicas: 3
 
   nginx:
     image: nginx
     build: ./nginx
-    container_name: nginx
     restart: always
     ports:
       - "80:80"
+    deploy:
+      mode: replicated
+      replicas: 3
     

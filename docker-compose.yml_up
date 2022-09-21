@@ -9,13 +9,16 @@ services:
       dockerfile: Dockerfile
     restart: always
     expose:
-      - "8080"
+      - 8080
+    deploy:
+      mode: replicated
+      replicas: 3
 
   nginx:
     image: nginx
     build: 
       context: ./nginx
-      #dockerfile: Dockerfile
+      dockerfile: Dockerfile
     restart: always
     ports:
       - "80:80"

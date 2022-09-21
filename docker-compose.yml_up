@@ -8,15 +8,17 @@ services:
       context: ./driving_accompany
       dockerfile: Dockerfile
     restart: always
+    expose:
+      - "8080"
 
   nginx:
     image: nginx
     build: 
       context: ./nginx
-      dockerfile: Dockerfile
+      #dockerfile: Dockerfile
     restart: always
-    #ports:
-      #- "80:80"
+    ports:
+      - "80:80"
     deploy:
       mode: replicated
       replicas: 3

@@ -7,8 +7,6 @@ services:
     build: ./driving_accompany
     container_name: driving_accompany
     restart: always
-    expose:
-      - 5000
 
   nginx:
     image: nginx

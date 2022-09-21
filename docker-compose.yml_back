@@ -7,9 +7,15 @@ services:
     restart: always
     expose:
       - 5000
+    deploy:
+      mode: replicated
+      replicas: 3
 
   nginx:
     image: xblcn/driving_accompany_nginx
     restart: always
     ports:
       - "80"
+    deploy:
+      mode: replicated
+      replicas: 3

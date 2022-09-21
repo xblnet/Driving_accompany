@@ -1,0 +1,12 @@
+# Contents of /etc/systemd/system/app.service
+[Unit]
+Description=My_APP
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=/usr/bin/python3 /Driving_accompany/driving_accompany/app.py
+
+[Install]
+WantedBy=multi-user.target

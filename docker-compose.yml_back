@@ -11,6 +11,4 @@ services:
   nginx:
     image: xblcn/driving_accompany_nginx
     restart: always
-    ports:
-      - "80:80"
     

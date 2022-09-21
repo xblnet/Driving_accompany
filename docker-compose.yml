@@ -8,17 +8,12 @@ services:
     restart: always
     expose:
       - 8080
-    deploy:
-      mode: replicated
-      replicas: 3
 
   nginx:
     image: nginx
     build: ./nginx
     restart: always
     ports:
-      - "80:80"
-    deploy:
-      mode: replicated
-      replicas: 3
+    - published: 80
+      target: 80
     

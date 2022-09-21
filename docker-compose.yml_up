@@ -6,7 +6,7 @@ services:
     image: driving_accompany
     build:
       context: ./driving_accompany
-      dockerfile:Dockerfile
+      dockerfile: Dockerfile
     container_name: driving_accompany
     restart: always
     expose:

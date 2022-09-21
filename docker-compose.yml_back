@@ -15,7 +15,7 @@ services:
     image: xblcn/driving_accompany_nginx
     restart: always
     ports:
-      - "80:80"
+      - "80"
     deploy:
       mode: replicated
       replicas: 3

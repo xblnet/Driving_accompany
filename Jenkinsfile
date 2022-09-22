@@ -9,7 +9,7 @@ pipeline{
 
             stage('test'){
                 steps{
-                    sh "cd driving_accompany && python3 -m pytest --cov=app"
+                    sh "python3 -m pytest --cov=app"
                 }
             }
 

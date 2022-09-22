@@ -135,8 +135,6 @@ def checkLesson(x):
         return redirect(url_for('home'))
     return render_template('lesson.html', data = data)
 
-
-
 @app.route('/register', methods=['GET','POST'])
 def register():
 
@@ -148,7 +146,6 @@ def register():
         password2 = request.form.get('password1')
 
         user = Customer.query.filter_by(email=email).first()
-        print("Test.........",user)
         if user:
             flash('Email already existed!', category='error')
         elif len(email) < 4:

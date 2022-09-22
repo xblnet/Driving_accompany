@@ -1,11 +1,10 @@
 pipeline{
         agent any
         stages{
-            sh "$check"
             stage('update'){
                 steps{
                     sh "docker ps"
-                    sh "$check = 5"
+                    sh "check=5"
                 }
             }
 

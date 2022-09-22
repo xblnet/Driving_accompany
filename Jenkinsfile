@@ -3,7 +3,7 @@ pipeline{
         stages{
             stage('update'){
                 steps{
-                    sh "docker ps"
+                    sh "$USER"
                 }
             }
 

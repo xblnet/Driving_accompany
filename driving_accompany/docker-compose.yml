@@ -7,7 +7,7 @@ services:
     build: ../driving_accompany
     restart: always
     expose:
-      - 8080
+      - 5000
 
   nginx:
     image: nginx

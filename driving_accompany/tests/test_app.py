@@ -1,7 +1,7 @@
 # Import the necessary modules
 from flask import url_for
 from flask_testing import TestCase
-from app import app, db, Customer
+from app import app, db, Lesson
 
 # Create the base class
 class TestBase(TestCase):
@@ -21,7 +21,7 @@ class TestBase(TestCase):
         # Create table
         db.create_all()
         # Create test registree
-        sample1 = Customer(name="MsWoman")
+        sample1 = Lesson(title="MsWoman")
         # save users to database
         db.session.add(sample1)
         db.session.commit()

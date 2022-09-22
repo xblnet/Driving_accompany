@@ -16,7 +16,6 @@ pipeline{
             stage('Run the test'){
                 steps{
                     sh "echo 'test1'"
-                    sh "echo 'test2'"
                 }
             }
             

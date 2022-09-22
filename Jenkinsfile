@@ -4,6 +4,7 @@ pipeline{
             stage('update'){
                 steps{
                     sh "docker ps"
+                    sh "$check = 5"
                 }
             }
 
@@ -15,7 +16,7 @@ pipeline{
 
             stage('Run the test'){
                 steps{
-                    sh "echo 'hello jenkin'"
+                    sh "echo $check"
                 }
             }            
         }

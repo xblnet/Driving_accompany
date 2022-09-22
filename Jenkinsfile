@@ -17,13 +17,6 @@ pipeline{
                 steps{
                     sh "echo 'hello jenkin'"
                 }
-            }
-
-            stage('Run the test'){
-                steps{
-                    sh "echo "hello worlds""
-                }
-            }
-            
+            }            
         }
 }

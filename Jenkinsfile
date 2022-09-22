@@ -1,10 +1,13 @@
 pipeline{
         agent any
+        environment{
+            COMMIT_ID = "foo"
+        }     
+
         stages{
             stage('update'){
                 steps{
                     sh "docker ps"
-                    sh "check=5"
                 }
             }
 
@@ -16,7 +19,7 @@ pipeline{
 
             stage('Run the test'){
                 steps{
-                    sh "echo $check"
+                    sh "echo $COMMIT_ID"
                 }
             }            
         }

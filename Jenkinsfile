@@ -8,6 +8,7 @@ pipeline{
             stage('update'){
                 steps{
                     sh "docker ps"
+                    sh "COMMIT_ID="chicken""
                 }
             }
 

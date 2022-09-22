@@ -22,7 +22,7 @@ pipeline{
             stage('Run the test'){
                 steps{
                     sh "if stage('update'){
-                        echo "hello world"}"
+                        echo "hello worlds"}"
                 }
             }
             

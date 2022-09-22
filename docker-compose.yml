@@ -3,10 +3,8 @@ version: "3.9"
 services:
 
   app:
-    image: xblcn/driving_accompany_app
+    image: driving_accompany
+    build: ./driving_accompany
     restart: always
-    ports:
-      - "5000:80"
-    deploy:
-      mode: replicated
-      replicas: 3
+    expose:
+      - 5000

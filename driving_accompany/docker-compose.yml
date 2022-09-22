@@ -3,16 +3,10 @@ version: "3.9"
 services:
 
   app:
-    image: driving_accompany
-    build: ../driving_accompany
-    restart: always
-    expose:
-      - 5000
-
-  nginx:
-    image: nginx
-    build: ./nginx
+    image: xblcn/driving_accompany_app
     restart: always
     ports:
-      - "80:80"
-    
+      - "5000:80"
+    deploy:
+      mode: replicated
+      replicas: 3

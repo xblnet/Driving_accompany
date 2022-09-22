@@ -1,6 +1,7 @@
 pipeline{
         agent any
         stages{
+            sh "$check"
             stage('update'){
                 steps{
                     sh "docker ps"

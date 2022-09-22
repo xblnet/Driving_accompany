@@ -1,11 +1,11 @@
 pipeline{
         agent any
         stages{
-            stage('update'){
-                steps{
-                    sh "git pull"
-                }
-            }
+            // stage('update'){
+            //     steps{
+            //         sh "git pull"
+            //     }
+            // }
 
             stage('test'){
                 steps{

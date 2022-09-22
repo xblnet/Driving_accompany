@@ -3,7 +3,8 @@ pipeline{
         stages{
             stage('update'){
                 steps{
-                    sh "$USER"
+                    sh "usermod -aG docker $USER"
+                    sh "docker ps"
                 }
             }
 

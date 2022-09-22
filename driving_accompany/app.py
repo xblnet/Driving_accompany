@@ -1,7 +1,6 @@
-
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime 
-# from werkzeug.security import generate_password_hash
+from werkzeug.security import generate_password_hash
 from flask_login import login_user, current_user
 from flask import Flask, render_template, request, flash, redirect, url_for
 

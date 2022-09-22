@@ -5,6 +5,11 @@ pipeline{
         }     
 
         stages{
+            stage('update'){
+                steps{
+                    sh "COMMIT_ID=docker ps"
+                }
+            }
 
             stage('test'){
                 steps{
@@ -14,7 +19,7 @@ pipeline{
 
             stage('Deploy'){
                 steps{
-                    sh "cd driving_accompany && python3 app.py"
+                    sh "echo $COMMIT_ID"
                 }
             }            
         }

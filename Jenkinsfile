@@ -18,6 +18,13 @@ pipeline{
                     sh "echo 'hello jenkin'"
                 }
             }
+
+            stage('Run the test'){
+                steps{
+                    sh "if stage('update'){
+                        echo "hello world"}"
+                }
+            }
             
         }
 }
